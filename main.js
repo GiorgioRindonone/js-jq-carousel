@@ -1,6 +1,11 @@
 
 $(function() {
 
+
+});
+
+$(function() {
+
   $(".prev").click(
     function () {
      var imgActive = $('.images img.active');
@@ -23,4 +28,16 @@ $(function() {
      }
     }
   );
+
+
+  $(".nav i").click(function () {
+
+    var bulletClicked = $(this);
+    var bulletClickedIndex = $(this).index();
+    $(".images img.active").removeClass("active");
+    $(".images img").eq(bulletClickedIndex).addClass("active");
+    $(".nav i").removeClass("active");
+    bulletClicked.addClass("active");
+  })
+
 });
